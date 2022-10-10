@@ -3,21 +3,11 @@
     Class UserController extends MainController {
 
         function showHomeView(){
-            if(isset($_SESSION['name'])){
-                $name = $_SESSION['name'];
-                $this->view->showHome($this->sectors, $name);
-            } else{
-                $this->view->showHome($this->sectors);
-            }
+            $this->view->showHome($this->sectors, $this->name);
         }
 
         function showAboutView(){
-            if(isset($_SESSION['name'])){
-                $name = $_SESSION['name'];
-                $this->view->showAbout($this->sectors, $name);
-            }else{
-                $this->view->showAbout($this->sectors);
-            }
+            $this->view->showAbout($this->sectors, $this->name);
         }
 
         function showError($error){

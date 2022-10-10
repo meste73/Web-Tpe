@@ -29,7 +29,7 @@
         function updateWork($id){
             $this->checkLoggedIn();
             $work = $this->worksModel->getWorkById($id);
-            $this->view->showUpdateForm($work, $this->sectors);
+            $this->view->showUpdateForm($work, $this->sectors, $this->name);
         }
         
         function updatedWork($id){
@@ -46,47 +46,24 @@
 
         function showAllWorks(){
             $works = $this->worksModel->getAll();
-            if(isset($_SESSION['name'])){
-                $name = $_SESSION['name'];
-                $this->view->showWorks($works, $this->sectors, $name);
-            } else {
-                $this->view->showWorks($works, $this->sectors);
-            }
+            $this->view->showWorks($works, $this->sectors, $this->name);
         }
 
         function showWorksBySector($sector){
             $works = $this->worksModel->getWorksBySector($sector);
-            if(isset($_SESSION['name'])){
-                $name = $_SESSION['name'];
-                $this->view->showWorks($works, $this->sectors, $name);
-            } else {
-                $this->view->showWorks($works, $this->sectors);
-            }
+            $this->view->showWorks($works, $this->sectors, $this->name);
         }
 
         function showWorkByWorkId($id){
             $work = $this->worksModel->getWorkAndSectorByWorkId($id);
-            if(isset($_SESSION['name'])){
-                $name = $_SESSION['name'];
-                if($work)
-                $this->view->showFound($work, $this->sectors, $name);
-                else 
-                $this->view->showError("El codigo de trabajo ingresado no es valido.", $name);
-            } else {
-                if($work)
-                $this->view->showFound($work, $this->sectors);
-                else 
-                $this->view->showError("El codigo de trabajo ingresado no es valido.");
-            }
+            if($work)
+            $this->view->showFound($work, $this->sectors, $this->name);
+            else 
+            $this->view->showError("El codigo de trabajo ingresado no es valido.", $this->name);
         }
 
         function showSectors(){
-            if(isset($_SESSION['name'])){
-                $name = $_SESSION['name'];
-                $this->view->showSectors($this->sectors, $name);
-            } else {
-                $this->view->showSectors($this->sectors);
-            }
+            $this->view->showSectors($this->sectors, $this->name);
         }
     }
 

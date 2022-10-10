@@ -24,7 +24,7 @@
         function updateSector($id) {
             $this->checkLoggedIn();
             $sector = $this->garageModel->getSectorById($id);
-            $this->view->showUpdateGarageForm($sector);
+            $this->view->showUpdateGarageForm($sector,$this->sectors, $this->name);
         }
 
         function sectorUpdated($id) {

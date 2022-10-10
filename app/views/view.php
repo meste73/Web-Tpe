@@ -50,9 +50,10 @@ class View{
             $this->smarty->display('templates/updateWorkForm.tpl');
         }
 
-        function showUpdateGarageForm($sector, $name = null){
+        function showUpdateGarageForm($sector, $sectors, $name = null){
             $this->smarty->assign('name', $name);
             $this->smarty->assign('sector', $sector);
+            $this->smarty->assign('sectors', $sectors);
             $this->smarty->display('templates/updateGarageForm.tpl');
         }
 

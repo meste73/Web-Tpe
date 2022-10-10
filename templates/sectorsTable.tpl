@@ -3,8 +3,10 @@
     <tr>
         <td>Sector</td>
         <td>Encargado</td>
-        <td></td>
-        <td></td>
+        {if {$name}}
+            <td></td>
+            <td></td>
+        {/if}
     </tr>
     {foreach $sectors as $sector}
         <tr>

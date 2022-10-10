@@ -13,14 +13,17 @@
         protected $authModel;
         protected $view;
         protected $sectors;
+        protected $name;
+
 
         function __construct(){
             $this->worksModel = new WorksModel();
             $this->garageModel = new GarageModel();
             $this->authModel = new AuthModel();
             $this->view = new View();
-            $this->sectors = $this->garageModel->getAll();
             session_start();
+            $this->sectors = $this->garageModel->getAll();
+            $this->setName();
         }
 
         protected function checkLoggedIn(){
@@ -28,5 +31,10 @@
                 header('Location: ' . BASE_URL);
                 die();
             }
+        }
+
+        private function setName(){
+            if(isset($_SESSION['name']))
+            $this->name = $_SESSION['name'];
         }
     }

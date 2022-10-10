@@ -7,8 +7,10 @@
         <td>Estado</td>
         <td>Sector</td>
         <td>Responsable</td>
-        <td></td>
-        <td></td>
+        {if {$name}}
+            <td></td>
+            <td></td>
+        {/if}
     </tr>
     {foreach $works as $work}
         <tr>
