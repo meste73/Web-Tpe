@@ -1,0 +1,51 @@
+.labelSearch{
+    padding-left: 5px;
+}
+
+div.workSearch{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+}
+
+div.buttonSearch{
+    display: flex;
+    align-items: flex-end;
+}
+
+button.height{
+    height: 38px;
+}
+
+form.login{
+    gap: 3px;
+    margin-right: 5px;
+}
+
+div.master{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+    gap: 50px;
+}
+
+
+div.main{
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+}
+
+div.form{
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+}
+
+div.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 600px;
+}
