@@ -2,11 +2,11 @@
 
     define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' .$_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
-    include 'app/controllers/mainController.php';
-    include 'app/controllers/userController.php';
-    include 'app/controllers/workController.php';
-    include 'app/controllers/garageController.php';
-    include 'app/controllers/authController.php';
+    require_once 'app/controllers/mainController.php';
+    require_once 'app/controllers/userController.php';
+    require_once 'app/controllers/workController.php';
+    require_once 'app/controllers/garageController.php';
+    require_once 'app/controllers/authController.php';
 
     if(!empty($_GET['action'])){
         $action = $_GET['action'];

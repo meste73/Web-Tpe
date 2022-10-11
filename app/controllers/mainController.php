@@ -1,10 +1,10 @@
 <?php
 
-    include 'app/models/mainModel.php';
-    include 'app/models/garageModel.php';
-    include 'app/models/authModel.php';
-    include 'app/models/worksModel.php';
-    include 'app/views/view.php';
+    require_once 'app/models/mainModel.php';
+    require_once 'app/models/garageModel.php';
+    require_once 'app/models/authModel.php';
+    require_once 'app/models/worksModel.php';
+    require_once 'app/views/view.php';
 
     class MainController{
 
@@ -20,9 +20,9 @@
             $this->worksModel = new WorksModel();
             $this->garageModel = new GarageModel();
             $this->authModel = new AuthModel();
-            $this->view = new View();
-            session_start();
             $this->sectors = $this->garageModel->getAll();
+            $this->view = new View($this->sectors);
+            session_start();
             $this->setName();
         }
 

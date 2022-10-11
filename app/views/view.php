@@ -6,54 +6,49 @@ class View{
 
         private $smarty;
 
-        function __construct(){
+        function __construct($sectors){
             $this->smarty = new Smarty();
             $this->smarty->assign('BASE_URL', BASE_URL);
+            $this->smarty->assign('sectors', $sectors);
+            
         }
 
-        function showHome($sectors, $name = null){
+        function showHome($name = null){
             $this->smarty->assign('name', $name);
-            $this->smarty->assign('sectors', $sectors);
             $this->smarty->display('templates/home.tpl');
         }
 
-        function showAbout($sectors, $name = null){
+        function showAbout($name = null){
             $this->smarty->assign('name', $name);
-            $this->smarty->assign('sectors', $sectors);
             $this->smarty->display('templates/about.tpl');
         }
 
-        function showFound($work, $sectors, $name = null){
+        function showFound($work, $name = null){
             $this->smarty->assign('name', $name);
             $this->smarty->assign('work', $work);
-            $this->smarty->assign('sectors', $sectors);
             $this->smarty->display('templates/workTable.tpl');
         }
 
-        function showWorks($works, $sectors, $name = null){
+        function showWorks($works, $name = null){
             $this->smarty->assign('name', $name);
             $this->smarty->assign('works', $works);
-            $this->smarty->assign('sectors', $sectors);
             $this->smarty->display('templates/worksTable.tpl');
         }
 
-        function showSectors($sectors, $name = null){
+        function showSectors($name = null){
             $this->smarty->assign('name', $name);
-            $this->smarty->assign('sectors', $sectors);
             $this->smarty->display('templates/sectorsTable.tpl');
         }
 
-        function showUpdateForm($work, $sectors, $name = null){
+        function showUpdateForm($work, $name = null){
             $this->smarty->assign('name', $name);
             $this->smarty->assign('work', $work);
-            $this->smarty->assign('sectors', $sectors);
             $this->smarty->display('templates/updateWorkForm.tpl');
         }
 
-        function showUpdateGarageForm($sector, $sectors, $name = null){
+        function showUpdateGarageForm($sector, $name = null){
             $this->smarty->assign('name', $name);
             $this->smarty->assign('sector', $sector);
-            $this->smarty->assign('sectors', $sectors);
             $this->smarty->display('templates/updateGarageForm.tpl');
         }
 

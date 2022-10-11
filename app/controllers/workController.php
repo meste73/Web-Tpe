@@ -16,7 +16,7 @@
                 header("Location: " . BASE_URL. "works");
             }
             else{
-                $this->view->showError("El numero de trabajo ya existe");
+                $this->view->showError("El numero de trabajo ya existe", $this->name);
             }
         }
         
@@ -29,7 +29,7 @@
         function updateWork($id){
             $this->checkLoggedIn();
             $work = $this->worksModel->getWorkById($id);
-            $this->view->showUpdateForm($work, $this->sectors, $this->name);
+            $this->view->showUpdateForm($work, $this->name);
         }
         
         function updatedWork($id){
@@ -46,24 +46,24 @@
 
         function showAllWorks(){
             $works = $this->worksModel->getAll();
-            $this->view->showWorks($works, $this->sectors, $this->name);
+            $this->view->showWorks($works, $this->name);
         }
 
         function showWorksBySector($sector){
             $works = $this->worksModel->getWorksBySector($sector);
-            $this->view->showWorks($works, $this->sectors, $this->name);
+            $this->view->showWorks($works, $this->name);
         }
 
         function showWorkByWorkId($id){
             $work = $this->worksModel->getWorkAndSectorByWorkId($id);
             if($work)
-            $this->view->showFound($work, $this->sectors, $this->name);
+            $this->view->showFound($work, $this->name);
             else 
             $this->view->showError("El codigo de trabajo ingresado no es valido.", $this->name);
         }
 
         function showSectors(){
-            $this->view->showSectors($this->sectors, $this->name);
+            $this->view->showSectors($this->name);
         }
     }
 

@@ -11,7 +11,7 @@
                 $this->garageModel->addSector($area, $manager);
                 header("Location: " . BASE_URL . "sectors");
             } else {
-                $this->view->showError("El sector ya existe");
+                $this->view->showError("El sector ya existe", $this->name);
             }
         }
 
@@ -24,7 +24,7 @@
         function updateSector($id) {
             $this->checkLoggedIn();
             $sector = $this->garageModel->getSectorById($id);
-            $this->view->showUpdateGarageForm($sector,$this->sectors, $this->name);
+            $this->view->showUpdateGarageForm($sector, $this->name);
         }
 
         function sectorUpdated($id) {
