@@ -1,3 +1,8 @@
+body{
+    position: relative;
+    min-height: 100vh;
+}
+
 .labelSearch{
     padding-left: 5px;
 }
@@ -26,7 +31,7 @@ div.master{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px 0;
+    margin-top: 30px;
     gap: 50px;
 }
 
@@ -49,3 +54,9 @@ div.row{
     flex-wrap: nowrap;
     max-width: 600px;
 }
+
+footer.bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
