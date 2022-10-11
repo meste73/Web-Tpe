@@ -11,6 +11,7 @@
             $workStatus = $_POST['work_status'];
             $area = $_POST['area'];
             $work = $this->worksModel->getWorkByWorkId($work_id);
+            //check if work already exists.
             if(!$work){
                 $this->worksModel->addWork($workName, $workDescription, $clientName, $work_id, $workStatus, $area);
                 header("Location: " . BASE_URL. "works");
@@ -20,18 +21,21 @@
             }
         }
         
+
         function deleteWork($id){
             $this->checkLoggedIn();
             $this->worksModel->deleteWork($id);
             header("Location: " . BASE_URL. "works");
         }
         
+        //update function, first step: get and show work in form.
         function updateWork($id){
             $this->checkLoggedIn();
             $work = $this->worksModel->getWorkById($id);
             $this->view->showUpdateForm($work, $this->name);
         }
         
+        //update function, second step: send data to db.
         function updatedWork($id){
             $this->checkLoggedIn();
             $workName = $_POST['work_name'];

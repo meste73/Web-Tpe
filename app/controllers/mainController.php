@@ -26,6 +26,7 @@
             $this->setName();
         }
 
+        //wall function for admin.
         protected function checkLoggedIn(){
             if(empty($_SESSION['name'])){
                 header('Location: ' . BASE_URL);
@@ -33,6 +34,7 @@
             }
         }
 
+        //set function, only used by this controller.
         private function setName(){
             if(isset($_SESSION['name']))
             $this->name = $_SESSION['name'];

@@ -110,6 +110,6 @@
             break;
 
         default:
-        $userController = new UserController();
+            $userController = new UserController();
             $userController->showError("Error 404, page not found.");
     }
