@@ -1,6 +1,6 @@
 {include file="header.tpl"}
         <div class="main">
-                <h3>Bienvenidos al websyte de Servicio Mecanico Mestelan.</h3>
+                <h3>Bienvenidos al website de Servicio Mecanico Mestelan.</h3>
                 <p>Contamos con dos amplios servicios de mantenimiento y reparacion orientados a vehiculos particulares y
                         competicion</p>
 

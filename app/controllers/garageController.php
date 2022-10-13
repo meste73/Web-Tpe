@@ -41,8 +41,13 @@
             $this->checkLoggedIn();
             $area = $_POST['area'];
             $manager = $_POST['manager'];
-            $this->garageModel->updateSector($id, $area, $manager);
-            header("Location: " . BASE_URL . "sectors");
+            //update if area does not exists in any sector.
+            if(!$this->garageModel->getSectorByArea($area)){
+                $this->garageModel->updateSector($id, $area, $manager);
+                header("Location: " . BASE_URL . "sectors");
+            } else{
+                $this->userView->showError("Error de modificacion, el sector ".$area." ya existe.");
+            }
         }
 
         function sectorHasWorks($id){

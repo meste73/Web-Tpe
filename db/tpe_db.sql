@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-10-2022 a las 19:33:08
+-- Tiempo de generación: 14-10-2022 a las 01:14:01
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -61,7 +61,7 @@ INSERT INTO `garage` (`id`, `area`, `manager`) VALUES
 (1, 'Torneria', 'Daniel Mestelan'),
 (2, 'Cajas de cambios', 'Ezequiel Mestelan'),
 (5, 'Trabado', 'Ezequiel Mestelan'),
-(12, 'Lavado', 'Emiliano Quiña');
+(12, 'Lavado', 'David Alberdi');
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,8 @@ INSERT INTO `works` (`id`, `work_name`, `work_description`, `client_name`, `work
 (10, 'Balanceo de cardan', 'Control cardan Chev Silverado 98, vibracion.', 'Claudio Guzman', 3253463, 'Recibido', 1),
 (14, 'Rectificar eje de pedalera', 'Desarmar eje de pedalera, rectificar eje y embujar cuerpo.', 'Miguel Arce', 112458, 'Recibido', 1),
 (15, 'Trabar 5ta Toyota Hilux', 'Realizar trabajo de engranaje y desplazable de 5ta marcha de caja de velocidades Toyota Hilux', 'Claudio Guzman', 365542, 'Recibido', 5),
-(16, 'Lavar block moto Rouser 200', 'Realizar lavado y descontaminado de carcaza block de moto Rouser NS 200.', 'Federico Acuña', 445784, 'Recibido', 12);
+(16, 'Lavar block moto Rouser 200', 'Realizar lavado y descontaminado de carcaza block de moto Rouser NS 200.', 'Federico Acuña', 445784, 'Recibido', 12),
+(19, 'Lavar carcaza de caja ford falcon', 'Realizar limpieza de interior y exterior de caja de cambios ford falcon, eliminar pintura', 'Carlos Lopez', 987412, 'Recibido', 12);
 
 --
 -- Índices para tablas volcadas
@@ -131,13 +132,13 @@ ALTER TABLE `administrator`
 -- AUTO_INCREMENT de la tabla `garage`
 --
 ALTER TABLE `garage`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `works`
 --
 ALTER TABLE `works`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Restricciones para tablas volcadas

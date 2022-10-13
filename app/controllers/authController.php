@@ -19,7 +19,7 @@
                 $_SESSION['email'] = $user->email;
                 header('Location: ' . BASE_URL);
             } else {
-                $this->view->showError("Usuario o contraseña incorrectos", $this->name);
+                $this->userView->showError("Usuario o contraseña incorrectos", $this->name);
             }
         }
 
