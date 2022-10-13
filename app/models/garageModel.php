@@ -34,4 +34,5 @@
             $query = $this->db->prepare('UPDATE garage SET area = ?, manager = ? WHERE id = ?');
             $query->execute([$area, $manager, $id]);
         }
+
     }

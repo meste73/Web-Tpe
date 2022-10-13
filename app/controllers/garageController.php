@@ -12,14 +12,20 @@
                 $this->garageModel->addSector($area, $manager);
                 header("Location: " . BASE_URL . "sectors");
             } else {
-                $this->view->showError("El sector ya existe", $this->name);
+                $this->userView->showError("El sector ya existe", $this->name);
             }
         }
 
         function deleteSector($id) {
             $this->checkLoggedIn();
-            $this->garageModel->deleteSector($id);
-            header("Location: " . BASE_URL . "sectors");
+            $name = $this->garageModel->getSectorById($id)->area;
+            //delete if sector has not contain works, otherwise show an error message.
+            if (!$this->sectorHasWorks($id)){
+                $this->garageModel->deleteSector($id);
+                header("Location: " . BASE_URL . "sectors");
+            } else {
+                $this->userView->showError("Error de eliminacion, el sector ".$name." contiene trabajos.");
+            }
         }
 
         //update function, first step: get and show sector in form.
@@ -27,7 +33,7 @@
             $this->checkLoggedIn();
             //get sector for updating.
             $sector = $this->garageModel->getSectorById($id);
-            $this->view->showUpdateGarageForm($sector, $this->name);
+            $this->garageView->showUpdateGarageForm($sector, $this->name);
         }
 
         //update function, second step: send data to db.
@@ -38,4 +44,13 @@
             $this->garageModel->updateSector($id, $area, $manager);
             header("Location: " . BASE_URL . "sectors");
         }
+
+        function sectorHasWorks($id){
+            return $this->worksModel->getWorksBySector($id);
+        }
+
+        function showSectors(){
+            $this->garageView->showSectors($this->name);
+        }
+
     }

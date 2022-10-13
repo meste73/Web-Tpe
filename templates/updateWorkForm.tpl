@@ -12,7 +12,7 @@
             <input type="text" name="work_id" class="form-control" value="{$work->work_id}" required>
             <label for="">Estado</label>
             <input type="text" name="work_status" class="form-control" value="{$work->work_status}" required>
-            <label for="">Sector</label>
+            <label for="">Seleccionar sector</label>
             <select name="area" id="" class="form-control">
                 {foreach $sectors as $sector}
                     {if {$sector->id} == {$work->fk_id}}

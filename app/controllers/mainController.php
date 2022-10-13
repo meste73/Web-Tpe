@@ -1,29 +1,36 @@
 <?php
 
-    require_once 'app/models/mainModel.php';
-    require_once 'app/models/garageModel.php';
-    require_once 'app/models/authModel.php';
-    require_once 'app/models/worksModel.php';
-    require_once 'app/views/view.php';
+    require_once 'app/models/MainModel.php';
+    require_once 'app/models/GarageModel.php';
+    require_once 'app/models/AuthModel.php';
+    require_once 'app/models/WorksModel.php';
+    require_once 'app/views/MainView.php';
+    require_once 'app/views/GarageView.php';
+    require_once 'app/views/UserView.php';
+    require_once 'app/views/WorksView.php';
 
     class MainController{
 
         protected $worksModel;
         protected $garageModel;
         protected $authModel;
-        protected $view;
+        protected $garageView;
+        protected $userView;
+        protected $worksView;
         protected $sectors;
         protected $name;
 
 
         function __construct(){
+            session_start();
+            $this->setName();
             $this->worksModel = new WorksModel();
             $this->garageModel = new GarageModel();
             $this->authModel = new AuthModel();
             $this->sectors = $this->garageModel->getAll();
-            $this->view = new View($this->sectors);
-            session_start();
-            $this->setName();
+            $this->garageView = new GarageView($this->sectors, $this->name);
+            $this->userView = new UserView($this->sectors, $this->name);
+            $this->worksView = new WorksView($this->sectors, $this->name);
         }
 
         //wall function for admin.

@@ -2,11 +2,11 @@
 
     define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' .$_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
-    require_once 'app/controllers/mainController.php';
-    require_once 'app/controllers/userController.php';
-    require_once 'app/controllers/workController.php';
-    require_once 'app/controllers/garageController.php';
-    require_once 'app/controllers/authController.php';
+    require_once 'app/controllers/MainController.php';
+    require_once 'app/controllers/UserController.php';
+    require_once 'app/controllers/WorkController.php';
+    require_once 'app/controllers/GarageController.php';
+    require_once 'app/controllers/AuthController.php';
 
     if(!empty($_GET['action'])){
         $action = $_GET['action'];
@@ -32,8 +32,8 @@
             break;
 
         case 'sectors':
-            $workController = new WorkController();
-            $workController->showSectors();
+            $garageController = new GarageController();
+            $garageController->showSectors();
             break;
         
         case 'about':

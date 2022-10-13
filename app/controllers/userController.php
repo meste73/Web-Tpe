@@ -3,14 +3,14 @@
     Class UserController extends MainController {
 
         function showHomeView(){
-            $this->view->showHome($this->name);
+            $this->userView->showHome();
         }
 
         function showAboutView(){
-            $this->view->showAbout($this->name);
+            $this->userView->showAbout($this->name);
         }
 
         function showError($error){
-            $this->view->showError($error, $this->name);
+            $this->userView->showError($error, $this->name);
         }
     }
