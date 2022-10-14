@@ -58,9 +58,14 @@
             $this->worksView->showWorks($works, $this->name);
         }
 
-        function showWorksBySector($sector){
-            $works = $this->worksModel->getWorksBySector($sector);
-            $this->worksView->showWorks($works, $this->name);
+        function showWorksBySector($sector_fk){
+            $works = $this->worksModel->getWorksBySector($sector_fk);
+            $sector = $this->garageModel->getSectorById($sector_fk);
+            if($works){
+                $this->worksView->showWorks($works, $this->name);
+            } else {
+                $this->userView->showError("No se encuentran trabajos asignados en sector ".$sector->area.".");
+            }
         }
 
         function showWorkByWorkId($id){
