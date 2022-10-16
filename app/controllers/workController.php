@@ -64,7 +64,7 @@
             if($works){
                 $this->worksView->showWorks($works, $this->name);
             } else {
-                $this->userView->showError("No se encuentran trabajos asignados en sector ".$sector->area.".");
+                $this->userView->showError("No hay trabajos, sector no encontrado.");
             }
         }
 

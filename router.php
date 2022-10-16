@@ -44,7 +44,7 @@
         case 'detail':
             $workController = new WorkController();
             if(isset($_POST['searchInput']))
-            $work_id = $_POST['searchInput'];
+                $work_id = $_POST['searchInput'];
             else{
                 $work_id = $params[1];
             }
@@ -71,19 +71,19 @@
         case 'deleteWork':
             $workController = new WorkController();
             if(isset($params[1]))
-            $workController->deleteWork($params[1]);
+                $workController->deleteWork($params[1]);
             break;
 
         case 'updateWork':
             $workController = new WorkController();
             if(isset($params[1]))
-            $workController->updateWork($params[1]);
+                $workController->updateWork($params[1]);
             break;
 
         case 'updatedWork':
             $workController = new WorkController();
             if(isset($params[1]))
-            $workController->updatedWork($params[1]);
+                $workController->updatedWork($params[1]);
             break;
         
         //Crud Sectors
@@ -95,18 +95,19 @@
         case 'deleteSector':
             $garageController = new GarageController();
             if(isset($params[1]))
-            $garageController->deleteSector($params[1]);
+                $garageController->deleteSector($params[1]);
             break;
 
         case 'updateSector':
             $garageController = new GarageController();
             if(isset($params[1]))
-            $garageController->updateSector($params[1]);
+                $garageController->updateSector($params[1]);
             break;
 
         case 'sectorUpdated':
             $garageController = new GarageController();
-            $garageController->sectorUpdated($params[1]);
+            if(isset($params[1]))
+                $garageController->sectorUpdated($params[1]);
             break;
 
         default:
