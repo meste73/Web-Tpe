@@ -46,9 +46,13 @@
             if(isset($_POST['searchInput']))
                 $work_id = $_POST['searchInput'];
             else{
-                $work_id = $params[1];
+                if(isset($params[1]))
+                    $work_id = $params[1];
             }
-            $workController->showWorkByWorkId($work_id);
+            if(isset($work_id))
+                $workController->showWorkByWorkId($work_id);
+            else
+                header("Location: " .BASE_URL);
             break;
         
         //Auth Validation
