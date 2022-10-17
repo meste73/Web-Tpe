@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-    <table class='table table-striped'>
+    <table class="table table-striped table-dark">
         <tr>
             <td>Trabajo</td>
             <td>Descripcion</td>
@@ -14,7 +14,7 @@
         </tr>
         {foreach $works as $work}
             <tr>
-                <td><a href='detail/{$work->work_id}'>{$work->work_name}</a></td>
+                <td><a href='detail/{$work->work_id}' class="link-light">{$work->work_name}</a></td>
                 <td>{$work->work_description|truncate:35}</td>
                 <td>{$work->client_name}</td>
                 <td>{$work->work_status}</td>

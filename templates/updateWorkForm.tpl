@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-    <div class="form">
+    <div class="p-3 mb-2 bg-dark text-white form rounded">
         <h3>Modificar trabajo</h3>
         <form action="updatedWork/{$work->id}" method="post">
             <label for="">Trabajo</label>
@@ -22,7 +22,7 @@
                     {/if}
                 {/foreach}
             </select>
-            <button type="submit" class="btn btn-outline-secondary height">Modificar</button>
+            <button type="submit" class="btn btn-light mt-3">Modificar</button>
         </form>
     </div>
 {include file="footer.tpl"}

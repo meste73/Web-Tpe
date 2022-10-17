@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-    <table class="table table-striped">
+    <table class="table table-striped table-dark">
         <tr>
             <td>Sector</td>
             <td>Encargado</td>
@@ -10,7 +10,7 @@
         </tr>
         {foreach $sectors as $sector}
             <tr>
-                <td><a href='works/{$sector->id}'>{$sector->area}</a></td>
+                <td><a href='works/{$sector->id}' class="link-light">{$sector->area}</a></td>
                 <td>{$sector->manager}</td>
                 {if {$name}}
                     <td><a href='updateSector/{$sector->id}' type='button' class='btn btn-danger ml-auto'>Modificar</a></td>

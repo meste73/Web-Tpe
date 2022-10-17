@@ -1,5 +1,5 @@
 {if {$name}}
-    <div class="form">
+    <div class="p-3 mb-2 bg-dark text-white form rounded">
         <h3>Agregar trabajo</h3>
         <form action="addWork" method="post">
             <label for="">Trabajo</label>
@@ -18,7 +18,7 @@
                     <option value="{$sector->id}">{$sector->area}</option>
                 {/foreach}
             </select>
-            <button type="submit" class="btn btn-outline-secondary height">Enviar</button>
+            <button type="submit" class="btn btn-light mt-3">Enviar</button>
         </form>
     </div>
 {/if}

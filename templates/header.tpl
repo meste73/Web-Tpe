@@ -13,16 +13,16 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav class="navbar navbar-expand-lg bg-dark text-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="home">Servicio Mecanico Mestelan</a>
+                <a class="navbar-brand text-light" href="home">Servicio Mecanico Mestelan</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="works" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle link-light" href="works" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Trabajos
                             </a>
                             <ul class="dropdown-menu">
@@ -33,10 +33,10 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="sectors">Sectores</a>
+                            <a class="nav-link link-light" href="sectors">Sectores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about">Sobre nosotros</a>
+                            <a class="nav-link link-light" href="about">Sobre nosotros</a>
                         </li>
                     </ul>
                     {if {!$name}}
@@ -50,12 +50,12 @@
                         <input class="form-control me-2" type="password" name="password" id="" placeholder="Ingrese contraseña" required>
                         </div>
                         <div class="buttonSearch">
-                        <button class="btn btn-outline-secondary height" type="submit">Login</button>
+                        <button class='btn btn-danger ml-auto' type="submit">Login</button>
                         </div>
                         </form>
                     {else}
                         <div><span>{$name} ---></span></div>
-                        <a class="mr-5" href="logout">Logout</a>
+                        <a class='btn btn-danger ml-auto' href="logout">Logout</a>
                     {/if}
                 </div>
             </div>

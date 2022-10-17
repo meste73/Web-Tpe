@@ -19,5 +19,7 @@
                 <p>Ofrecemos un servicio virtual que permite a nuestros clientes hacer un seguimiento de cada trabajo mediante
                         numero de trabajo.</p>
         </div>
-{include file="workSearch.tpl"}
+        <div class="main">
+                {include file="workSearch.tpl"}
+        </div>
 {include file="footer.tpl"}

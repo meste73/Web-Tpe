@@ -1,6 +1,6 @@
 {include file="header.tpl"}
     <div class='main'>
-        <table class='table table-striped'>
+        <table class="table table-striped table-dark">
                 <tr>
                     <td>Trabajo</td>
                     <td>{$work->work_name}</td>
